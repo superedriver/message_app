@@ -1,0 +1,13 @@
+%h1 Message
+%h2 Message ID: #{ @message.id }!
+%h2 Message text:
+%p #{ @message.text }
+%br/
+- if @message.option
+  - if @message.option.delete_after_views
+    - if @message.option.delete_after_views > 0
+      %p Message will be deleted after #{ @message.option.delete_after_views } views.
+    - else
+      %p Message has been deleted.
+  - if @message.option.delete_at
+    %p Message will be deleted at #{ @message.option.delete_at.localtime.strftime("%d-%m-%Y %H-%M") }.

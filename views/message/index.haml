@@ -1,0 +1,8 @@
+%h1 All messages!
+%ul
+  - @messages.each do |message|
+    %li
+      %a{ href: url("/messages/#{message.link}") } #{message.link}
+
+
+

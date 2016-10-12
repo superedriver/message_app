@@ -1,0 +1,29 @@
+development:
+  adapter: postgresql
+  host: localhost
+  port: 5432
+  username: YOUR_PSQL_USERNAME
+  password: YOUR_PSQL_PASSWORD
+  database: message_dev
+  schema_search_path: public
+  encoding: utf8
+
+test:
+  adapter: postgresql
+  host: localhost
+  port: 5432
+  username: YOUR_PSQL_USERNAME
+  password: YOUR_PSQL_PASSWORD
+  database: message_test
+  schema_search_path: public
+  encoding: utf8
+
+production:
+  adapter: postgresql
+  host: localhost
+  port: 5432
+  username: YOUR_PSQL_USERNAME
+  password: YOUR_PSQL_PASSWORD
+  database: message_prod
+  schema_search_path: public
+  encoding: utf8

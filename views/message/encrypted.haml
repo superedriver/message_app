@@ -1,0 +1,11 @@
+%h1 Message is encrypted!
+%h2 Please, enter a password!
+%form{action: "/messages/password", method: "POST", id: "check-pass-form", "data-remote": "true"}
+  %br/
+  %label
+    %b Password
+    %br/
+    %input{name: "password", placeholder: "Enter password", type: "password"}/
+    %input{name: "link", value: @message.link, type: "hidden"}/
+  %br/
+  %input{type: "submit", value: "Send password", onclick: "checkPassword()" }/
