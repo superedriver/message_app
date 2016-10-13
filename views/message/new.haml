@@ -1,13 +1,13 @@
 %h1 Enter a message!
-%form{action: "/messages", method: "POST", id: "message"}
-  %textarea{name: "message[text]", cols: 100, rows: 15, required: true}
+%form{action: '/messages', method: 'POST', id: 'message'}
+  %textarea{name: 'message[text]', cols: 100, rows: 15, required: true}
   %br/
   %br/
   %label
     %b Password
     (If you want the message to be encrypted)
     %br/
-    %input{name: "password", placeholder: "Enter password", type: "password"}/
+    %input{name: 'password', placeholder: 'Enter password', type: 'password'}/
   %br/
   %br/
   %br/
@@ -16,14 +16,14 @@
     %legend Enter additon options for delete message:
     %label
       Delete after:
-      %input{name: "delete_after_views", min: 1, placeholder: "Enter a number of views", type: "number"}/
+      %input{name: 'delete_after_views', min: 1, placeholder: 'Enter a number of views', type: 'number'}/
       views
     %br/
     %br/
     %label
       Delete after:
-      %input{name: "delete_after_hours", min: 1, placeholder: "Enter a number of housr", type: "number"}/
+      %input{name: 'delete_after_hours', min: 1, placeholder: 'Enter a number of hours', type: 'number'}/
       hours.
     %br/
     %br/
-  %input{type: "submit", value: "Submit", onclick: "encryptMessage()"}/
+  %input{type: 'submit', value: 'Submit', onclick: 'encryptMessage()'}/

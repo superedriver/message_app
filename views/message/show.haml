@@ -1,7 +1,7 @@
 %h1 Message
 %h2 Message ID: #{ @message.id }!
 %h2 Message text:
-%p #{ @message.text }
+%p#message-text #{ @message.text }
 %br/
 - if @message.option
   - if @message.option.delete_after_views
@@ -10,4 +10,9 @@
     - else
       %p Message has been deleted.
   - if @message.option.delete_at
-    %p Message will be deleted at #{ @message.option.delete_at.localtime.strftime("%d-%m-%Y %H-%M") }.
+    %p Message will be deleted at #{ @message.option.delete_at.localtime.strftime('%d-%m-%Y %H-%M') }.
+- if @message.password.present?
+  :javascript
+    var message = "#{ @message.text[0...-2] }" + "\r\n";
+    var password = "#{ @message.password }";
+    $('#message-text').html(GibberishAES.dec(message, password));

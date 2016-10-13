@@ -1,7 +1,7 @@
 get '/' do
-  redirect "/messages/new"
+  redirect '/messages/new'
 end
 
 get '/:name' do
-  "Hello, #{ params[:name] }!"
+  "Hello, #{params[:name]}!"
 end
