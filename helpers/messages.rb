@@ -15,8 +15,4 @@ module MessageHelper
     message.destroy if message.option.delete_after_views <= 0
     message
   end
-
-  def message_not_found
-    'This message has been deleted or has not been created yet. Sorryan, Bro...'
-  end
 end

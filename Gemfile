@@ -11,4 +11,12 @@ gem 'rake', '~> 11.1', '>= 11.1.2'
 gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'whenever', '~> 0.9.4', require: false
 gem 'aescrypt', '~> 1.0'
-gem 'sinatra-respond_to', '~> 0.9.0'
+
+
+group :test do
+  gem 'rspec', '~> 3.4'
+  gem 'rack-test', '~> 0.6.3'
+  gem 'factory_girl', '~> 4.5'
+  gem 'faker', '~> 1.6', '>= 1.6.3'
+  gem 'database_cleaner', '~> 1.5', '>= 1.5.1'
+end

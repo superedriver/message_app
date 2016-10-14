@@ -4,4 +4,8 @@ class Message < ActiveRecord::Base
   def correct_password?(password)
     self.password == password
   end
+
+  def get_link
+    self.link = SecureRandom.urlsafe_base64(8)
+  end
 end

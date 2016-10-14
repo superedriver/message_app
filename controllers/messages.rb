@@ -11,7 +11,7 @@ end
 
 get '/messages/:link' do
   @message = Message.find_by(link: params[:link])
-  halt 404, message_not_found unless @message
+  halt 404, haml(:'/message/404') unless @message
 
   if @message.password.present?
     haml :'/message/encrypted'
@@ -23,9 +23,8 @@ end
 
 post '/messages' do
   message = Message.new(params[:message])
-
-  message.link = SecureRandom.urlsafe_base64(8)
   message.password = params[:password]
+  message.get_link
 
   if message.save
     delete_after_views = convert_views(params[:delete_after_views])
@@ -35,15 +34,15 @@ post '/messages' do
 
     redirect "/messages/#{message.link}"
   else
-    'There was a error while creating the message!'
+    'There was an error while creating the message!'
   end
 end
 
 post '/messages/:link' do
   @message = Message.find_by(link: params[:link])
-  halt 404, message_not_found unless @message
+  halt 404, haml(:'/message/404') unless @message
 
-  if @message.correct_password? params[:password]
+  if @message.password.present? && params[:password].present? && @message.correct_password?(params[:password])
      @message = update_message(@message) if @message&.option&.delete_after_views
     haml :'/message/show'
   else

@@ -1,6 +1,5 @@
 %h1 Message
-%h2 Message ID: #{ @message.id }!
-%h2 Message text:
+%h2 Text:
 %p#message-text #{ @message.text }
 %br/
 - if @message.option
@@ -12,6 +11,7 @@
   - if @message.option.delete_at
     %p Message will be deleted at #{ @message.option.delete_at.localtime.strftime('%d-%m-%Y %H-%M') }.
 - if @message.password.present?
+  :preserve
   :javascript
     var message = "#{ @message.text[0...-2] }" + "\r\n";
     var password = "#{ @message.password }";

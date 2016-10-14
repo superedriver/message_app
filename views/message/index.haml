@@ -1,8 +1,10 @@
-%h1 All messages:
-%ul
-  - @messages.each do |message|
-    %li
-      %a{ href: url("/messages/#{message.link}") } #{message.link}
-
+- if @messages.present?
+  %h1 All messages:
+  %ul
+    - @messages.each do |message|
+      %li
+        %a{ href: url("/messages/#{message.link}") } #{message.link}
+- else
+  %h1 There aren't any messages!
 
 
