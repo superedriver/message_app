@@ -2,6 +2,6 @@ get '/' do
   redirect '/messages/new'
 end
 
-get '/:name' do
-  "Hello, #{params[:name]}!"
+not_found do
+  halt 404, haml(:'/message/404')
 end
