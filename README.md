@@ -19,12 +19,29 @@ AES algorithm if user uses password while creation.
  * [PostgreSQL](http://www.postgresql.org) 
 
 ## Installation
-Copy configuration files
+1. Go to project folder
+
+2. Copy configuration files
 
 ```
 cp config/database.yml.example config/database.yml
 ```
 Configure them with your data
+
+3. Install needed gems
+```
+bundle install
+```
+
+4. Run migrations
+```
+bundle exec rake db:migrate
+```
+
+5. Install cron job for deleting expired messages
+```
+whenever --update-crontab
+```
 
 ## Used instruments
   - **Sinatra** - DSL for quickly creating web applications in Ruby
