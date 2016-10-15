@@ -16,7 +16,7 @@ get '/messages/:link' do
   if @message.password.present?
     haml :'/message/encrypted'
   else
-    @message = update_message(@message) if @message&.option&.delete_after_views
+    @message = update_message(@message)
     haml :'/message/show'
   end
 end
@@ -43,7 +43,7 @@ post '/messages/:link' do
   halt 404, haml(:'/message/404') unless @message
 
   if @message.password.present? && params[:password].present? && @message.correct_password?(params[:password])
-     @message = update_message(@message) if @message&.option&.delete_after_views
+     @message = update_message(@message)
     haml :'/message/show'
   else
     redirect "/messages/#{@message.link}"

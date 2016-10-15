@@ -1,13 +1,13 @@
 %h1 Enter a message!
 %form{action: '/messages', method: 'POST', id: 'message'}
-  %textarea{name: 'message[text]', cols: 100, rows: 15, required: true}
+  %textarea{name: 'message[text]', cols: 100, rows: 15, required: true, id: 'message-text'}
   %br/
   %br/
   %label
     %b Password
     (If you want the message to be encrypted)
     %br/
-    %input{name: 'password', placeholder: 'Enter password', type: 'password'}/
+    %input{name: 'password', placeholder: 'Enter password', type: 'password', id: 'message-password'}/
   %br/
   %br/
   %br/

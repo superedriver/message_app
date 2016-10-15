@@ -10,9 +10,11 @@ module MessageHelper
   end
 
   def update_message(message)
-    message.option.delete_after_views -=1
-    message.option.save
-    message.destroy if message.option.delete_after_views <= 0
+    if message&.option&.delete_after_views
+      message.option.delete_after_views -=1
+      message.option.save
+      message.destroy if message.option.delete_after_views <= 0
+    end
     message
   end
 end

@@ -1,9 +1,9 @@
 function encryptMessage() {
-    var password = document.getElementsByName('password')[0].value;
-    var message = document.getElementsByName('message[text]')[0].value;
+    var password = $('#message-password').val();
+    var message = $('#message-text').val();
 
     if(password){
-        document.getElementsByName('message[text]')[0].value = GibberishAES.enc(message, password);
+        $('#message-text').val(GibberishAES.enc(message, password));
     }
     return false;
 }
