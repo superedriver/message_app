@@ -7,4 +7,6 @@ services:
 before_script:
   - cp config/database.yml.travis config/database.yml
   - psql -c 'create database travis_ci_test;' -U postgres
-script: bundle exec rspec spec
+script:
+  - ENV['RACK_ENV']=test bundle exec rake db:migrate
+  - bundle exec rspec spec
