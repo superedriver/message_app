@@ -13,6 +13,10 @@ engines:
       languages:
       - ruby
       - javascript
+ratings:
+  paths:
+  - "**.rb"
+  - "**.go"
 exclude_paths:
 - "public/js/gibberish-aes-1.0.0.js"
 - "public/js/jquery-3.1.1.min.js"
