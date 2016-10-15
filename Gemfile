@@ -21,4 +21,5 @@ group :test do
   gem 'faker', '~> 1.6', '>= 1.6.3'
   gem 'database_cleaner', '~> 1.5', '>= 1.5.1'
   gem 'capybara', '~> 2.7', '>= 2.7.1'
+  gem 'timecop', '~> 0.8.1'
 end

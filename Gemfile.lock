@@ -82,6 +82,7 @@ GEM
     slop (3.6.0)
     thread_safe (0.3.5)
     tilt (2.0.5)
+    timecop (0.8.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     whenever (0.9.7)
@@ -109,6 +110,7 @@ DEPENDENCIES
   rspec (~> 3.4)
   sinatra (~> 1.4, >= 1.4.7)
   sinatra-activerecord (~> 2.0, >= 2.0.9)
+  timecop (~> 0.8.1)
   whenever (~> 0.9.4)
 
 RUBY VERSION

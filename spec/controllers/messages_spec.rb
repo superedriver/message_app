@@ -23,6 +23,18 @@ describe 'Message Controller' do
       expect(last_response.body).to include(message1.link)
       expect(last_response.body).to include(message2.link)
     end
+
+    it 'deleted messages don\'t appear in list' do
+      message1 = create(:message)
+      message2 = create(:message)
+      message1.destroy
+
+      get '/messages'
+
+      expect(last_response.body).to include('All messages:')
+      expect(last_response.body).not_to include(message1.link)
+      expect(last_response.body).to include(message2.link)
+    end
   end
 
   describe 'GET "/messages/:link"' do
@@ -82,10 +94,6 @@ describe 'Message Controller' do
         end
 
         it 'destroys expired messages' do
-          require 'rake'
-          load File.expand_path('../../../lib/tasks/out_of_date.rake', __FILE__)
-          Rake::Task.define_task(:environment)
-
           message = create(:message)
           message.create_option(delete_at: Time.now - 60*60)
           Rake::Task['message:delete_expired'].invoke
