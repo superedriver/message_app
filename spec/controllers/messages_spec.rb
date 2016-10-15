@@ -78,7 +78,7 @@ describe 'Message Controller' do
           get "/messages/#{message.link}"
 
           expect(last_response.body).to include(message.text)
-          expect(last_response.body).to include("Message will be deleted at #{ message.option.delete_at.localtime.strftime('%d-%m-%Y %H-%M') }")
+          expect(last_response.body).to include("Message will be deleted #{ message.option.delete_at.utc.strftime('%d-%m-%Y') } at #{ message.option.delete_at.utc.strftime('%H:%M') } UTC.")
         end
 
         it 'destroys expired messages' do
@@ -102,7 +102,7 @@ describe 'Message Controller' do
         get "/messages/#{message.link}"
 
         expect(last_response.body).to include(message.text)
-        expect(last_response.body).to include("Message will be deleted at #{ message.option.delete_at.localtime.strftime('%d-%m-%Y %H-%M') }")
+        expect(last_response.body).to include("Message will be deleted #{ message.option.delete_at.utc.strftime('%d-%m-%Y') } at #{ message.option.delete_at.utc.strftime('%H:%M') } UTC.")
         expect(last_response.body).to include('Message will be deleted after 4 views')
       end
     end
