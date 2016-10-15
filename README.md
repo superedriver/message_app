@@ -22,26 +22,26 @@ AES algorithm if user uses password while creation.
  * [PostgreSQL](http://www.postgresql.org) 
 
 ## Installation
-1. Go to project folder
+##### Go to the project folder
 
-2. Copy configuration files
+##### Copy configuration files
 
 ```
 cp config/database.yml.example config/database.yml
 ```
 Configure them with your data
 
-3. Install needed gems
+##### Install needed gems
 ```
 bundle install
 ```
 
-4. Run migrations
+##### Run migrations
 ```
 bundle exec rake db:migrate
 ```
 
-5. Install cron job for deleting expired messages
+##### Install cron job for deleting expired messages
 ```
 whenever --update-crontab
 ```
