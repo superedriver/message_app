@@ -1,10 +1,12 @@
+[![Build Status](https://travis-ci.org/superedriver/message_app.svg?branch=master)](https://travis-ci.org/superedriver/message_app)
+
 # Message 
 An application for creating a text self-destructing messages.
 
 ## Description
 User can create a message. Application generates a
 safe link to this saved message (like:
-http://yourapp.com/message/ftr45e32fgv56d2 ​).
+http://messageapp.com/message/ftr45e32fgv56d2 ​).
 
 User is able to choose destruction options for messages:  
 - after given number of link visits 
