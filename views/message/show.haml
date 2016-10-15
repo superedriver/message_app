@@ -9,7 +9,7 @@
     - else
       %p Message has been deleted.
   - if @message.option.delete_at
-    %p Message will be deleted at #{ @message.option.delete_at.localtime.strftime('%d-%m-%Y %H-%M') }.
+    %p Message will be deleted #{ @message.option.delete_at.strftime('%d-%m-%Y') } at #{ @message.option.delete_at.strftime('%H:%M') } UTC.
 - if @message.password.present?
   :javascript
     var message = "#{ @message.text[0...-2] }" + "\r\n";
