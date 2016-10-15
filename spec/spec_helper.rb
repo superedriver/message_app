@@ -119,6 +119,7 @@ require 'rack/test'
 require 'factory_girl'
 require 'faker'
 require 'database_cleaner'
+require 'capybara/rspec'
 require_relative '../app'
 
 RSpec.configure do |config|
