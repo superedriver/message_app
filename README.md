@@ -3,6 +3,9 @@
 # Message 
 An application for creating a text self-destructing messages.
 
+You can try how it works here:
+https://messagesms.herokuapp.com
+
 ## Description
 User can create a message. Application generates a
 safe link to this saved message (like:
