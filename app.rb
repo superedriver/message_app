@@ -1,7 +1,5 @@
 require 'sinatra'
 require 'sinatra/activerecord'
-require 'pry'
-require 'byebug'
 require 'haml'
 require 'securerandom'
 

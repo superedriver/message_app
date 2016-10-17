@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/superedriver/message_app.svg?branch=master)](https://travis-ci.org/superedriver/message_app)
 
-# Message 
+# Message
 An application for creating a text self-destructing messages.
 
 You can try how it works here:
@@ -11,15 +11,15 @@ User can create a message. Application generates a
 safe link to this saved message (like:
 http://messageapp.com/message/ftr45e32fgv56d2 ​).
 
-User is able to choose destruction options for messages:  
-- after given number of link visits 
+User is able to choose destruction options for messages:
+- after given number of link visits
 - after given number of hours
 
 All the messages stored on the server side can be encrypted using
 AES algorithm if user uses password while creation.
 
 ## Dependecies
- * [PostgreSQL](http://www.postgresql.org) 
+ * [PostgreSQL](http://www.postgresql.org)
 
 ## Installation
 * Go to the project folder
@@ -45,6 +45,13 @@ bundle exec rake db:migrate
 ```
 whenever --update-crontab
 ```
+
+* To run application:
+```
+rackup
+```
+It will appear on port 9292
+localhost:9292
 
 ## Used instruments
   - **Sinatra** - DSL for quickly creating web applications in Ruby
